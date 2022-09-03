@@ -1,16 +1,14 @@
 version: '3'
 services:
   web:
-    build: .
-    ports:
-      - "5000:8080"
+    build: . # Location of the DockerFil is in the current '.' directory
+    ports: # Set up port forwarding
+      - '5000:8080'
   db:
-    image: "mysql"
-    environment: 
+    image: 'mysql'
+    environment:
       MYSQL_ROOT_PASSWORD: password
     volumes:
       - db-data:/foo
-
 volumes:
   db-data:
-
